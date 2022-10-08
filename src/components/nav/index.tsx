@@ -176,12 +176,12 @@ export default function Nav() {
                 </button>
               </ul>
             )}
-            <a href="">Action centre</a>
-            <a href="">Apps</a>
-            <a href="">Tasks</a>
-            <a href="">Code review</a>
-            <a href="">QA review</a>
-            <a href="">Notes</a>
+            <a href="/">Action centre</a>
+            <a href="/">Apps</a>
+            <a href="/">Tasks</a>
+            <a href="/">Code review</a>
+            <a href="/">QA review</a>
+            <a href="/">Notes</a>
           </div>
         </div>
       </div>
