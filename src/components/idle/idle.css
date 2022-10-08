@@ -1,0 +1,66 @@
+@keyframes grow {
+  from {
+    height: 0;
+  }
+  to {
+    height: 100%;
+  }
+}
+
+.idle-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-end;
+}
+
+.block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+.candle {
+  position: relative;
+  width: 24px;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+}
+.candle::after {
+  content: "";
+  border-top-right-radius: inherit;
+  border-top-left-radius: inherit;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background: transparent;
+  overflow: hidden;
+  animation-name: grow;
+  animation-timing-function: ease;
+  animation-duration: 250ms;
+}
+.candle.idle::after {
+  background-color: var(--gray2);
+}
+.candle.productive {
+  margin-left: 8px;
+}
+
+.candle.productive::after {
+  background-color: var(--green);
+}
+
+.candle-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100%;
+  border-bottom: 1px solid var(--gray2);
+}
+.label {
+  margin-top: 14px;
+  color: var(--gray1);
+}

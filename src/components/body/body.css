@@ -1,0 +1,253 @@
+@keyframes up {
+  0% {
+    transform: rotate(-10deg);
+  }
+  100% {
+    transform: rotate(10deg);
+  }
+}
+
+.body {
+  overflow: auto;
+  padding-bottom: 16px;
+}
+
+main {
+  padding: 0 47px;
+}
+
+/* nav */
+nav {
+  width: 100%;
+  height: 74px;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  padding: 0 28px;
+}
+nav svg {
+  color: var(--gray1);
+  width: 24px;
+  height: auto;
+}
+
+/* header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .title {
+  font-weight: bold;
+  font-size: 16px;
+}
+header .dropdown {
+  position: relative;
+  background-color: var(--white);
+  font-size: 14px;
+  padding: 11px 48px 11px 16px;
+  border-radius: 8px;
+}
+header .dropdown::after {
+  content: "";
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-3px);
+  /* transform: translate(-50%, -50%); */
+  border: 6px solid var(--gray1);
+  border-bottom: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-left: 6px solid transparent;
+}
+
+section > section {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-top: 16px;
+}
+.sec-1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: max-content max-content;
+  grid-template-areas: "pr ticket" "cycle cycle";
+  gap: 16px;
+}
+
+.pr {
+  grid-area: pr;
+}
+.box {
+  background-color: var(--white);
+  border-radius: 8px;
+  padding: 16px;
+}
+.box .header {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(3, 41, 61, 0.05);
+  margin-bottom: 26px;
+}
+.box .header > div:first-of-type {
+  display: flex;
+  align-items: center;
+}
+.box .header > div:first-of-type p {
+  color: var(--gray1);
+  font-size: 16px;
+  margin-right: 10px;
+}
+.box .header > div:first-of-type svg {
+  color: var(--gray1);
+  width: 16px;
+  height: auto;
+}
+.box .header > div:last-of-type {
+  display: flex;
+}
+.box .header > div:last-of-type .stat {
+  display: flex;
+  align-items: center;
+  margin-left: 25px;
+}
+.box .header > div:last-of-type .circle {
+  width: 14px;
+  height: 14px;
+  border-radius: 100%;
+  margin-right: 12px;
+}
+
+.row {
+  display: flex;
+  margin-bottom: 26px;
+}
+.metric:not(:first-of-type) {
+  margin-left: 44px;
+}
+.metric > div {
+  display: flex;
+  align-items: baseline;
+}
+.metric > div p {
+  font-size: 20px;
+  font-weight: bold;
+  margin-right: 4px;
+}
+.metric > div span {
+  font-size: 14px;
+  color: var(--gray1);
+}
+.metric > p {
+  font-size: 16px;
+  color: var(--nav);
+  opacity: 0.5;
+}
+
+.badge {
+  display: flex;
+  align-items: center;
+  border-radius: 6px;
+  width: fit-content;
+  padding: 9px;
+}
+.badge.up {
+  background-color: rgba(77, 189, 152, 0.1);
+  color: var(--green);
+}
+.badge.down {
+  background-color: rgba(241, 88, 50, 0.1);
+  color: var(--red);
+}
+.badge.up svg {
+  animation-name: up;
+  animation-timing-function: ease;
+  animation-duration: 80ms;
+  animation-direction: alternate;
+  animation-iteration-count: 10;
+}
+.badge p {
+  margin-left: 5px;
+}
+
+.ticket {
+  grid-area: ticket;
+}
+
+#cycle {
+  /* width: auto;
+  height: auto; */
+  align-self: center;
+}
+.cycle {
+  grid-area: cycle;
+}
+.cycle .row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 0;
+}
+.cycle .row .aside {
+  align-self: flex-start;
+  display: grid;
+  gap: 16px;
+}
+.color-desc {
+  display: flex;
+  align-items: center;
+}
+.color-desc .circle {
+  width: 16px;
+  height: 16px;
+  border-radius: 100%;
+}
+.color-desc .desc {
+  font-size: 14px;
+  text-transform: capitalize;
+  color: var(--gray1);
+  margin-left: 12px;
+}
+.color-desc .time {
+  font-weight: bold;
+  color: var(--gray3);
+}
+
+.sec-2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: max-content max-content;
+  gap: 16px;
+}
+
+.work {
+}
+
+.idle {
+}
+
+/* bottom stats */
+section.planning {
+  margin-top: 80px;
+}
+section.planning > section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+section.planning .box p {
+  text-align: center;
+  color:var(--gray3);
+  opacity: 0.5;
+}
+
+@media only screen and (min-width: 1400px) {
+  section > section {
+    grid-template-columns: 1fr 1fr;
+  }
+  section.planning > section {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

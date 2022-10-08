@@ -1,0 +1,14 @@
+.user-btn {
+  border-radius: 100%;
+  color: var(--white);
+  font-size: 12px;
+  width: 32px;
+  height: 32px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.user-btn:not(:first-of-type) {
+  margin-top: 12px;
+}
