@@ -38,7 +38,7 @@ header {
   align-items: center;
 }
 header .title {
-  font-weight: bold;
+  font-weight: 900;
   font-size: 16px;
 }
 header .dropdown {
@@ -95,12 +95,13 @@ section > section {
   align-items: center;
 }
 .box .header > div:first-of-type p {
-  color: var(--gray1);
-  font-size: 16px;
+  color: var(--gray3);
+  opacity: 0.5;
+  font-size: 14px;
   margin-right: 10px;
 }
 .box .header > div:first-of-type svg {
-  color: var(--gray1);
+  color: rgba(3, 41, 61, 0.15);
   width: 16px;
   height: auto;
 }
@@ -119,6 +120,44 @@ section > section {
   margin-right: 12px;
 }
 
+.box .line-constraints svg {
+  overflow: visible;
+}
+.box .line-constraints .date {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 12px;
+  font-weight: 700;
+  opacity: 0.5;
+  color: var(--gray3);
+}
+.box .line-constraints {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.box .row2 .heading {
+  font-weight: 900;
+  font-size: 20px;
+  opacity: 1;
+  color: var(--gray3);
+}
+.box .row2 .col {
+  margin: 0;
+  margin-right: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.box .row2 {
+  display: flex;
+}
+
 .row {
   display: flex;
   margin-bottom: 26px;
@@ -132,7 +171,7 @@ section > section {
 }
 .metric > div p {
   font-size: 20px;
-  font-weight: bold;
+  font-weight: 900;
   margin-right: 4px;
 }
 .metric > div span {
@@ -179,6 +218,23 @@ section > section {
   /* width: auto;
   height: auto; */
   align-self: center;
+  position: relative;
+}
+#cycle > .info {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+  text-align: center;
+}
+#cycle > .info strong {
+  font-size: 14px;
+  color: var(--gray3);
+}
+#cycle > .info p {
+  font-size: 12px;
+  max-width: 14ch;
+  color: var(--gray1);
 }
 .cycle {
   grid-area: cycle;
@@ -235,11 +291,12 @@ section.planning {
 section.planning > section {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   gap: 16px;
 }
 section.planning .box p {
   text-align: center;
-  color:var(--gray3);
+  color: var(--gray3);
   opacity: 0.5;
 }
 
@@ -250,4 +307,36 @@ section.planning .box p {
   section.planning > section {
     grid-template-columns: repeat(4, 1fr);
   }
+}
+
+/* tooltip */
+.custom-tooltip {
+  outline: none;
+  color: var(--gray3);
+}
+
+.recharts-line-dot {
+  display: none;
+}
+
+.recharts-active-dot {
+  /* cursor: pointer; */
+  cursor: url("https://cdn-icons-png.flaticon.com/512/178/178431.png?w=10&h=20");
+  /* stroke: #ffffff; */
+}
+
+.recharts-active-dot > circle {
+  r: 6;
+  filter: drop-shadow(0px 3px 8px rgba(112, 120, 135, 0.24));
+  display: block;
+  stroke-width: 6;
+}
+.recharts-tooltip-wrapper {
+  filter: drop-shadow(0px 10px 24px rgba(29, 42, 68, 0.12));
+  border-radius: 4px;
+  outline: none;
+  border: none;
+}
+.recharts-tooltip-wrapper > p {
+  border: none;
 }

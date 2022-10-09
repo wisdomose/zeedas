@@ -4,6 +4,123 @@ import "./body.css";
 import Cycle, { cycleData } from "../doughunt";
 import Idle from "../idle";
 import Breakdown from "../breakdown";
+import { LineChart, Line, Tooltip } from "recharts";
+const data1 = [
+  {
+    name: "Page A",
+    uv: 1,
+    pv: 30,
+    amt: 2400,
+  },
+  {
+    name: "Page B",
+    uv: 2,
+    pv: 40,
+    amt: 2210,
+  },
+  {
+    name: "Page C",
+    uv: 3,
+    pv: 98,
+    amt: 2290,
+  },
+  {
+    name: "Page D",
+    uv: 4,
+    pv: 19,
+    amt: 2000,
+  },
+  {
+    name: "Page E",
+    uv: 5,
+    pv: 48,
+    amt: 2181,
+  },
+  {
+    name: "Page F",
+    uv: 6,
+    pv: 38,
+    amt: 2500,
+  },
+  {
+    name: "Page G",
+    uv: 7,
+    pv: 43,
+    amt: 2100,
+  },
+];
+const data2 = [
+  {
+    name: "Page A",
+    uv: 1,
+    pv: 30,
+    amt: 2400,
+  },
+  {
+    name: "Page B",
+    uv: 2,
+    pv: 40,
+    amt: 2210,
+  },
+  {
+    name: "Page C",
+    uv: 3,
+    pv: 98,
+    amt: 2290,
+  },
+];
+const data3 = [
+  {
+    name: "Page D",
+    uv: 4,
+    pv: 19,
+    amt: 2000,
+  },
+  {
+    name: "Page E",
+    uv: 5,
+    pv: 48,
+    amt: 2181,
+  },
+  {
+    name: "Page F",
+    uv: 6,
+    pv: 38,
+    amt: 2500,
+  },
+  {
+    name: "Page G",
+    uv: 7,
+    pv: 43,
+    amt: 2100,
+  },
+];
+const data4 = [
+  {
+    name: "Page A",
+    uv: 1,
+    pv: 30,
+    amt: 2400,
+  },
+  {
+    name: "Page B",
+    uv: 2,
+    pv: 40,
+    amt: 2210,
+  },
+  {
+    name: "Page F",
+    uv: 6,
+    pv: 4,
+    amt: 2500,
+  },
+  {
+    name: "Page G",
+    uv: 7,
+    pv: 20,
+    amt: 2100,
+  },
+];
 
 export default function Body() {
   return (
@@ -91,6 +208,10 @@ export default function Body() {
                     <p>24%</p>
                   </div>
                   <div id="cycle">
+                    <div className="info">
+                      <strong>17 hrs</strong>
+                      <p>Average across 50 tickets in 4 weeks</p>
+                    </div>
                     <Cycle />
                   </div>
 
@@ -194,7 +315,26 @@ export default function Body() {
                   <AiOutlineInfoCircle />
                 </div>
               </div>
-              <p>No data</p>
+              <div className="row2">
+                <div className="col">
+                  <p className="heading">27</p>
+                  <div className="badge up">
+                    <Up />
+                    <p>24%</p>
+                  </div>
+                </div>
+                <div className="line-constraints">
+                  <LineChart width={300} height={100} data={data1}>
+                    <Line
+                      type="monotone"
+                      dataKey="pv"
+                      stroke="#23B3E8"
+                      strokeWidth={4}
+                    />
+                    <Tooltip content={<CustomTooltip />} cursor={false} />
+                  </LineChart>
+                </div>
+              </div>
             </div>
             <div className="box">
               <div className="header">
@@ -203,7 +343,26 @@ export default function Body() {
                   <AiOutlineInfoCircle />
                 </div>
               </div>
-              <p>No data</p>
+              <div className="row2">
+                <div className="col">
+                  <p className="heading">27</p>
+                  <div className="badge up">
+                    <Up />
+                    <p>24%</p>
+                  </div>
+                </div>
+                <div className="line-constraints">
+                  <LineChart width={300} height={100} data={data2}>
+                    <Line
+                      type="monotone"
+                      dataKey="pv"
+                      stroke="#23B3E8"
+                      strokeWidth={4}
+                    />
+                    <Tooltip content={<CustomTooltip />} cursor={false} />
+                  </LineChart>
+                </div>
+              </div>
             </div>
             <div className="box">
               <div className="header">
@@ -212,7 +371,26 @@ export default function Body() {
                   <AiOutlineInfoCircle />
                 </div>
               </div>
-              <p>No data</p>
+              <div className="row2">
+                <div className="col">
+                  <p className="heading">27</p>
+                  <div className="badge up">
+                    <Up />
+                    <p>24%</p>
+                  </div>
+                </div>
+                <div className="line-constraints">
+                  <LineChart width={300} height={100} data={data3}>
+                    <Line
+                      type="monotone"
+                      dataKey="pv"
+                      stroke="#23B3E8"
+                      strokeWidth={4}
+                    />
+                    <Tooltip content={<CustomTooltip />} cursor={false} />
+                  </LineChart>
+                </div>
+              </div>
             </div>
             <div className="box">
               <div className="header">
@@ -221,7 +399,27 @@ export default function Body() {
                   <AiOutlineInfoCircle />
                 </div>
               </div>
-              <p>No data</p>
+              <div className="row2">
+                <div className="col">
+                  <p className="heading">27</p>
+                  <div className="badge down">
+                    <Up />
+                    <p>24%</p>
+                  </div>
+                </div>
+                <div className="line-constraints">
+                  <LineChart width={300} height={100} data={data4}>
+                    <Line
+                      type="monotone"
+                      dataKey="pv"
+                      stroke="#23B3E8"
+                      strokeWidth={4}
+                    />
+                    <Tooltip content={<CustomTooltip />} cursor={false} />
+                  </LineChart>
+                  <span className="date">01 May 2021</span>
+                </div>
+              </div>
             </div>
           </section>
         </section>
@@ -269,3 +467,33 @@ function Down() {
     </svg>
   );
 }
+
+const CustomTooltip = ({
+  active,
+  payload,
+  label,
+}: {
+  active?: any;
+  payload?: any;
+  label?: any;
+}) => {
+  if (active && payload && payload.length) {
+    return (
+      // <div className="custom-tooltip">
+      <p
+        className="label"
+        style={{
+          background: "white",
+          color: "var(--gray3)",
+          opacity: "1",
+          fontWeight: "900",
+          margin: "0",
+          padding: "10px",
+        }}
+      >{`${payload[0].value}%`}</p>
+      // </div>
+    );
+  }
+
+  return null;
+};
