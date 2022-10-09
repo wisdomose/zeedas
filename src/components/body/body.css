@@ -7,6 +7,18 @@
   }
 }
 
+@keyframes shake {
+  0% {
+    transform: rotate(-20deg);
+  }
+  50% {
+    transform: rotate(20deg);
+  }
+  0% {
+    transform: rotate(0);
+  }
+}
+
 .body {
   overflow: auto;
   padding-bottom: 16px;
@@ -207,9 +219,16 @@ section > section {
   animation-iteration-count: 10;
 }
 .badge p {
+  pointer-events: none;
   margin-left: 5px;
 }
-
+.badge:hover svg {
+  animation-name: shake;
+  animation-timing-function: ease;
+  animation-duration: 500ms;
+  animation-direction: forwards;
+  animation-iteration-count: infinite;
+}
 .ticket {
   grid-area: ticket;
 }
